@@ -4,6 +4,7 @@
 
 # => required gems
 require 'sinatra'
+
 require 'httparty'
 require 'nokogiri'
 

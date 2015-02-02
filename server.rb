@@ -4,7 +4,6 @@
 
 # => required gems
 require 'sinatra'
-
 require 'httparty'
 require 'nokogiri'
 
@@ -41,20 +40,18 @@ def wallstreet(ticker)
 	opening = span5.content
 
 	# => output
-	puts "Displaying infor for #{name}:\n\n"
-	puts "The current price of #{ticker.upcase} is $#{price} per share.\n\n"
-	puts "The previous closing price was $#{previous}.\n\n"
-	puts "#{ticker.upcase} has changed by#{change} points #{percent}\nfrom today's opening price of $#{opening}.\n\n"
+	return "Displaying infor for #{name}:"
+	return "The current price of #{ticker.upcase} is $#{price} per share."
+	return "The previous closing price was $#{previous}."
+	return "#{ticker.upcase} has changed by#{change} points #{percent} from today's opening price of $#{opening}."
 end
 
 # => calling the method with some default values provided
-puts "\n=========================================================\n"
-wallstreet('aapl')
-puts "\n=========================================================\n"
-wallstreet('msft')
-puts "\n=========================================================\n"
-wallstreet('ibm')
-puts "\n=========================================================\n"
-
+get '/wallstreet' do
+	wallstreet('aapl')
+	wallstreet('msft')
+	wallstreet('ibm')
+	wallstreet('goog')
+end
 
 # => end of file
