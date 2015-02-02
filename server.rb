@@ -44,10 +44,10 @@ def wallstreet(ticker)
 end
 
 # => calling the method with some default values provided
-get '/' do
-	wallstreet('aapl')
-	wallstreet('msft')
-	wallstreet('ibm')
+get '/wallstreet' do
+	# wallstreet('aapl')
+	# wallstreet('msft')
+	# wallstreet('ibm')
 	wallstreet('goog')
 end
 
