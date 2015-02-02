@@ -44,7 +44,7 @@ def wallstreet(ticker)
 end
 
 # => calling the method with some default values provided
-get '/wallstreet/' do
+get '/' do
 	wallstreet('goog')
 end
 
