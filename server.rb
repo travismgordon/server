@@ -40,14 +40,11 @@ def wallstreet(ticker)
 	opening = span5.content
 
 	# => output
-	return "Displaying infor for #{name}:"
-	return "The current price of #{ticker.upcase} is $#{price} per share."
-	return "The previous closing price was $#{previous}."
-	return "#{ticker.upcase} has changed by#{change} points #{percent} from today's opening price of $#{opening}."
+	"Displaying infor for #{name}: The current price of #{ticker.upcase} is $#{price} per share. The previous closing price was $#{previous}. #{ticker.upcase} has changed by#{change} points #{percent} from today's opening price of $#{opening}."
 end
 
 # => calling the method with some default values provided
-get '/wallstreet' do
+get '/' do
 	wallstreet('aapl')
 	wallstreet('msft')
 	wallstreet('ibm')
